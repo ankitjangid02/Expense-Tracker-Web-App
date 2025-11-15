@@ -1,0 +1,640 @@
+/* Dark Mode Theme Variables */
+:root {
+  /* Light Mode Variables */
+  --bg-primary: #f5f7fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f8f9fa;
+  --bg-quaternary: #e9ecef;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --text-tertiary: #718096;
+  --text-quaternary: #8a8a8a;
+  --border-color: #e2e8f0;
+  --border-secondary: #dee2e6;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-heavy: rgba(0, 0, 0, 0.2);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.dark-mode {
+  /* Dark Mode Variables */
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a202c;
+  --bg-tertiary: #2d3748;
+  --bg-quaternary: #4a5568;
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-tertiary: #a0aec0;
+  --text-quaternary: #718096;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-secondary: rgba(255, 255, 255, 0.15);
+  --shadow-light: rgba(0, 0, 0, 0.4);
+  --shadow-medium: rgba(0, 0, 0, 0.5);
+  --shadow-heavy: rgba(0, 0, 0, 0.6);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* ========================= */
+/* GLOBAL DARK MODE STYLES */
+/* ========================= */
+
+/* Apply dark mode to document root */
+.dark-mode {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.dark-mode body {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .App {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+/* ========================= */
+/* UNIVERSAL TEXT COLORS */
+/* ========================= */
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode p,
+.dark-mode span,
+.dark-mode div,
+.dark-mode label,
+.dark-mode li {
+  color: var(--text-secondary);
+}
+
+.dark-mode a {
+  color: var(--text-tertiary);
+}
+
+.dark-mode a:hover {
+  color: var(--text-primary);
+}
+
+/* ========================= */
+/* NAVBAR DARK MODE */
+/* ========================= */
+
+.dark-mode .navbar {
+  background: linear-gradient(135deg, rgba(26, 32, 44, 0.95) 0%, rgba(45, 55, 72, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px var(--shadow-medium);
+}
+
+.dark-mode .nav-brand {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .nav-links {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.dark-mode .nav-links a {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .nav-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .nav-links a.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .date-filter-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color);
+}
+
+.dark-mode .date-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .balance-display {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-secondary);
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .balance-amount {
+  color: var(--text-primary) !important;
+}
+
+/* ========================= */
+/* DASHBOARD DARK MODE */
+/* ========================= */
+
+.dark-mode .dashboard {
+  color: var(--text-primary);
+}
+
+.dark-mode .dashboard-header h1 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .quick-add-btn {
+  background: var(--gradient-primary);
+  color: white !important;
+}
+
+.dark-mode .balance-cards .balance-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+  color: var(--text-primary);
+}
+
+.dark-mode .balance-card.current-balance {
+  background: var(--gradient-primary);
+  color: white !important;
+}
+
+.dark-mode .balance-card h3 {
+  color: inherit;
+}
+
+.dark-mode .balance-card .balance-amount,
+.dark-mode .balance-card .expense-amount,
+.dark-mode .balance-card .income-amount {
+  color: inherit;
+}
+
+.dark-mode .recent-transactions {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.dark-mode .recent-transactions h2 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .view-all-link {
+  color: #667eea !important;
+}
+
+.dark-mode .view-all-link:hover {
+  color: #5a6fd8 !important;
+}
+
+.dark-mode .transaction-item {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-mode .transaction-item:hover {
+  background: var(--bg-quaternary);
+  border-color: var(--border-secondary);
+}
+
+.dark-mode .transaction-item.debit {
+  border-left-color: #dc3545;
+}
+
+.dark-mode .transaction-item.credit {
+  border-left-color: #28a745;
+}
+
+.dark-mode .transaction-info h4 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .transaction-date {
+  color: var(--text-tertiary) !important;
+}
+
+.dark-mode .no-transactions {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .no-transactions a {
+  color: #667eea !important;
+}
+
+.dark-mode .quick-actions {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.dark-mode .quick-actions h2 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .action-btn {
+  background: var(--bg-tertiary);
+  color: var(--text-primary) !important;
+  border: 2px solid var(--border-color);
+}
+
+.dark-mode .action-btn:hover {
+  background: var(--bg-quaternary);
+  border-color: var(--border-secondary);
+}
+
+/* ========================= */
+/* EXPENSE LIST DARK MODE */
+/* ========================= */
+
+.dark-mode .expense-list {
+  color: var(--text-primary);
+}
+
+.dark-mode .list-header h1 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .filter-info {
+  background: linear-gradient(135deg, #2b6cb0 0%, #2c5282 100%);
+  border: 1px solid var(--border-color);
+}
+
+.dark-mode .filter-info p {
+  color: white !important;
+}
+
+.dark-mode .clear-filter-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode .no-expenses {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary) !important;
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.dark-mode .summary-cards .summary-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.dark-mode .summary-card h3 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .summary-card p {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .list-controls {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.dark-mode .sort-controls label {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .sort-controls select {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.dark-mode .expenses-table {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.dark-mode .table-header {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .table-row {
+  background: transparent;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-mode .table-row:hover {
+  background: var(--bg-tertiary);
+}
+
+.dark-mode .table-row.debit {
+  border-left-color: #dc3545;
+}
+
+.dark-mode .table-row.credit {
+  border-left-color: #28a745;
+}
+
+.dark-mode .date-time div {
+  color: var(--text-secondary);
+}
+
+.dark-mode .time {
+  color: var(--text-tertiary) !important;
+}
+
+.dark-mode .reason {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .type {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .type.debit {
+  background: rgba(220, 53, 69, 0.2);
+  color: #ff6b6b !important;
+}
+
+.dark-mode .type.credit {
+  background: rgba(40, 167, 69, 0.2);
+  color: #51cf66 !important;
+}
+
+.dark-mode .amount {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .amount.debit {
+  color: #ff6b6b !important;
+}
+
+.dark-mode .amount.credit {
+  color: #51cf66 !important;
+}
+
+/* ========================= */
+/* EXPENSE FORM DARK MODE */
+/* ========================= */
+
+.dark-mode .expense-form {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.dark-mode .expense-form h1,
+.dark-mode .expense-form h2 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .input-group label {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .input-group input,
+.dark-mode .input-group select,
+.dark-mode .input-group textarea {
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-mode .input-group input:focus,
+.dark-mode .input-group select:focus,
+.dark-mode .input-group textarea:focus {
+  background: var(--bg-quaternary);
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.dark-mode .input-group input::placeholder,
+.dark-mode .input-group textarea::placeholder {
+  color: var(--text-quaternary);
+}
+
+.dark-mode .btn {
+  background: var(--gradient-primary);
+  color: white !important;
+}
+
+.dark-mode .btn:hover {
+  background: var(--gradient-secondary);
+}
+
+/* ========================= */
+/* REPORTS DARK MODE */
+/* ========================= */
+
+.dark-mode .reports {
+  color: var(--text-primary);
+}
+
+.dark-mode .reports h1,
+.dark-mode .reports h2,
+.dark-mode .reports h3 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .report-controls {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.dark-mode .report-controls label {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .report-controls select {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.dark-mode .chart-section {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.dark-mode .summary-stats {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.dark-mode .summary-stats h3 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .stat-item {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .no-data {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary) !important;
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.dark-mode .export-btn {
+  background: var(--gradient-primary);
+  color: white !important;
+}
+
+.dark-mode .export-btn:hover {
+  background: var(--gradient-secondary);
+}
+
+/* ========================= */
+/* BALANCE SETUP DARK MODE */
+/* ========================= */
+
+.dark-mode .balance-setup {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+  color: var(--text-primary);
+}
+
+.dark-mode .balance-setup h1,
+.dark-mode .balance-setup h2 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .balance-setup p {
+  color: var(--text-secondary) !important;
+}
+
+/* ========================= */
+/* AUTH CONTAINER DARK MODE */
+/* ========================= */
+
+.dark-mode .auth-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+  color: var(--text-primary);
+}
+
+.dark-mode .auth-container h1,
+.dark-mode .auth-container h2 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .auth-container p {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .auth-container button {
+  background: var(--gradient-primary);
+  color: white !important;
+}
+
+/* ========================= */
+/* LOADING SPINNER DARK MODE */
+/* ========================= */
+
+.dark-mode .loading-container {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+}
+
+.dark-mode .loading-spinner {
+  border-color: var(--text-tertiary);
+  border-top-color: var(--text-primary);
+}
+
+.dark-mode .loading-text {
+  color: var(--text-primary) !important;
+}
+
+/* ========================= */
+/* DATE FILTER PANEL DARK MODE */
+/* ========================= */
+
+.dark-mode .date-filter-panel {
+  background: rgba(26, 32, 44, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border-color);
+}
+
+.dark-mode .date-inputs input {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+.dark-mode .date-inputs input:focus {
+  background: var(--bg-quaternary);
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.dark-mode .filter-apply-btn {
+  background: var(--gradient-secondary);
+  color: white !important;
+}
+
+/* ========================= */
+/* DELETE BUTTONS DARK MODE */
+/* ========================= */
+
+.dark-mode .delete-btn,
+.dark-mode .delete-btn-small {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white !important;
+}
+
+.dark-mode .delete-btn:hover,
+.dark-mode .delete-btn-small:hover {
+  background: linear-gradient(135deg, #c82333 0%, #bd2130 100%);
+}
+
+/* ========================= */
+/* SCROLLBAR STYLING */
+/* ========================= */
+
+.dark-mode ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--bg-quaternary);
+  border-radius: 4px;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-quaternary);
+}
+
+/* ========================= */
+/* GLOBAL TRANSITIONS */
+/* ========================= */
+
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}

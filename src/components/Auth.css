@@ -1,0 +1,448 @@
+/* Authentication Container */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode auth container */
+.dark-mode .auth-container {
+  background: linear-gradient(135deg, #0f1419 0%, #1a202c 50%, #2d3748 100%);
+}
+
+/* Background Animation */
+.auth-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-shape {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 20s infinite linear;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode floating shapes */
+.dark-mode .floating-shape {
+  background: rgba(102, 126, 234, 0.15);
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0);
+  }
+  10% {
+    transform: translateY(90vh) scale(1);
+  }
+  90% {
+    transform: translateY(-10vh) scale(1);
+  }
+  100% {
+    transform: translateY(-10vh) scale(0);
+  }
+}
+
+/* Auth Card */
+.auth-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Dark mode auth card */
+.dark-mode .auth-card {
+  background: rgba(26, 32, 44, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(102, 126, 234, 0.1);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode auth header title */
+.dark-mode .auth-header h1 {
+  color: #ffffff;
+  background: linear-gradient(135deg, #667eea 0%, #4facfe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+.auth-header p {
+  color: #718096;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode auth header description */
+.dark-mode .auth-header p {
+  color: #a0aec0;
+}
+
+/* Form Styles */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode form labels */
+.dark-mode .input-group label {
+  color: #e2e8f0;
+}
+
+.input-group input {
+  padding: 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: #2d3748;
+}
+
+/* Dark mode input fields */
+.dark-mode .input-group input {
+  background: rgba(45, 55, 72, 0.8);
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+}
+
+.dark-mode .input-group input::placeholder {
+  color: #a0aec0;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Dark mode input focus */
+.dark-mode .input-group input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2), 0 0 20px rgba(102, 126, 234, 0.1);
+  background: rgba(45, 55, 72, 0.9);
+}
+
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 45px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #718096;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dark mode password toggle */
+.dark-mode .password-toggle {
+  color: #a0aec0;
+}
+
+.password-toggle:hover {
+  color: #4a5568;
+}
+
+/* Dark mode password toggle hover */
+.dark-mode .password-toggle:hover {
+  color: #e2e8f0;
+}
+
+/* Error Styles */
+.error {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #feb2b2;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode error messages */
+.dark-mode .error {
+  background: rgba(254, 83, 83, 0.15);
+  color: #fc8181;
+  border: 1px solid rgba(254, 83, 83, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Submit Button */
+.auth-submit-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.auth-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Dark mode submit button enhancements */
+.dark-mode .auth-submit-btn {
+  background: linear-gradient(135deg, #667eea 0%, #4facfe 100%);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.dark-mode .auth-submit-btn:hover:not(:disabled) {
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4), 0 0 20px rgba(102, 126, 234, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Footer */
+.auth-footer {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode auth footer */
+.dark-mode .auth-footer {
+  border-top: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.auth-footer p {
+  color: #718096;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode footer text */
+.dark-mode .auth-footer p {
+  color: #a0aec0;
+}
+
+.auth-switch-btn {
+  background: none;
+  border: none;
+  color: #667eea;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode switch button */
+.dark-mode .auth-switch-btn {
+  color: #4facfe;
+  text-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+}
+
+.auth-switch-btn:hover {
+  color: #764ba2;
+}
+
+/* Dark mode switch button hover */
+.dark-mode .auth-switch-btn:hover {
+  color: #667eea;
+  text-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
+}
+
+/* Enhanced Dark Mode Effects */
+.dark-mode .auth-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #667eea, #4facfe, #667eea);
+  border-radius: 20px;
+  opacity: 0.3;
+  z-index: -1;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.01);
+  }
+}
+
+/* Enhanced floating shapes for dark mode */
+.dark-mode .floating-shape:nth-child(even) {
+  background: rgba(79, 172, 254, 0.2);
+}
+
+.dark-mode .floating-shape:nth-child(3n) {
+  background: rgba(102, 126, 234, 0.25);
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 15px;
+  }
+  
+  .auth-card {
+    padding: 30px 25px;
+    max-width: 100%;
+  }
+  
+  .auth-header h1 {
+    font-size: 2rem;
+  }
+  
+  .input-group input {
+    padding: 12px;
+  }
+  
+  .auth-submit-btn {
+    padding: 12px 25px;
+  }
+  
+  /* Dark mode mobile adjustments */
+  .dark-mode .auth-card {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(102, 126, 234, 0.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 25px 20px;
+  }
+  
+  .auth-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  /* Dark mode small screen adjustments */
+  .dark-mode .auth-card {
+    backdrop-filter: blur(15px);
+  }
+  
+  .dark-mode .floating-shape {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Additional dark mode enhancements */
+.dark-mode .input-group input:hover {
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.1);
+}
+
+/* Dark mode loading state for submit button */
+.dark-mode .auth-submit-btn:disabled {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  opacity: 0.7;
+}
+
+/* Enhanced text selection for dark mode */
+.dark-mode ::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #ffffff;
+}
+
+/* Smooth transitions for theme switching */
+.auth-container,
+.auth-card,
+.auth-header h1,
+.auth-header p,
+.input-group label,
+.input-group input,
+.password-toggle,
+.error,
+.auth-submit-btn,
+.auth-footer,
+.auth-switch-btn,
+.floating-shape {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
